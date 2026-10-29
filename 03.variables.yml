@@ -19,3 +19,10 @@
     - name: Print Variable
       debug:
         msg: Play Var - {{ url_play }} , Play File Var - {{ url_file }}
+
+# Role Variables
+
+- name: Role Variables
+  hosts: all
+  roles: 
+    - demo
