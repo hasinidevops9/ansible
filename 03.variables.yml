@@ -7,9 +7,9 @@
       ansible.builtin.debug:
         msg: Host Var - {{ url_host }}  , Group Var - {{ url_group }}
 
-# playbook varibales
+# playbook varibales - limited to play level
 
-- name: play variables
+- name: play variables 
   hosts: all
   vars:
     url_play: play.example.com
@@ -20,14 +20,14 @@
       debug:
         msg: Play Var - {{ url_play }} , Play File Var - {{ url_file }}
 
-# Role Variables
+# Role Variables - limited to role level
 
 - name: Role Variables
   hosts: all
   roles: 
     - demo
 
-# Task Variables
+# Task Variables - Limited to task level
 
 - name: Task avriable
   hosts: all
@@ -37,6 +37,8 @@
         msg: Task Var - {{ url_task }} 
       vars:
         url_task: task.example.com
+
+# CLI Variables - Give value in Command, Any play can access this variable
 
 - name: Variables from cli
   hosts: all
