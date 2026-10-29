@@ -26,3 +26,21 @@
   hosts: all
   roles: 
     - demo
+
+# Task Variables
+
+- name: Task avriable
+  hosts: all
+  tasks:
+    - name: Print Variables
+      ansible.builtin.debug:
+        msg: Task Var - {{ url_task }} 
+      vars:
+        url_task: task.example.com
+
+- name: Variables from cli
+  hosts: all
+  tasks:
+    - name: Print Variables
+      ansible.builtin.debug:
+        msg: CLI var - {{ url_cli }}
