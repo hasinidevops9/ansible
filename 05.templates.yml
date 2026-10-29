@@ -9,6 +9,6 @@
         dest: /tmp/furl.txt
 
     - name: Copy Template
-      ansible.builtin.copy:
+      ansible.builtin.template:
         src: url.txt
         dest: /tmp/turl.txt
