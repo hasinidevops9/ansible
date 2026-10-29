@@ -17,12 +17,12 @@
       ansible.builtin.template:
         src: nginx.conf
         dest: /tmp/nginx.conf
-        vars:
-          app_names:
-            - orders
-            - ratings
-            - payment
-            - shipping
-            - cart
-            - user
-            - catalogue
+      vars:
+        app_names:
+          - orders
+          - ratings
+          - payment
+          - shipping
+          - cart
+          - user
+          - catalogue
