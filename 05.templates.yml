@@ -12,3 +12,17 @@
       ansible.builtin.template:
         src: url.txt
         dest: /tmp/turl.txt
+
+    - name: Template nginx
+      ansible.builtin.template:
+        src: nginx.conf
+        dest: /tmp/nginx.conf
+        vars:
+          app_names:
+            - orders
+            - ratings
+            - payment
+            - shipping
+            - cart
+            - user
+            - catalogue
