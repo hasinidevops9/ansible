@@ -1,0 +1,9 @@
+# we have 2 tasks
+
+- name: print test
+  debug:
+    msg: Hello Test
+
+- name: print world
+  debug:
+    msg: Hello World
