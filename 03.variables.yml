@@ -1,3 +1,5 @@
+# inventory file variables
+
 - name: Variables from inventory file
   hosts: all
   tasks:
@@ -5,12 +7,15 @@
       ansible.builtin.debug:
         msg: Host Var - {{ url_host }}  , Group Var - {{ url_group }}
 
+# playbook varibales
+
 - name: play variables
   hosts: all
   vars:
     url_play: play.example.com
+  vars_files:
+    - exvars.yml
   tasks:
     - name: Print Variable
       debug:
-        msg: Play Var - {{ url_play }}
-        
+        msg: Play Var - {{ url_play }} , Play File Var - {{ url_file }}
