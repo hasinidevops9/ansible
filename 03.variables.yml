@@ -4,3 +4,13 @@
     - name: Print Variables
       ansible.builtin.debug:
         msg: Host Var - {{ url_host }}  , Group Var - {{ url_group }}
+
+- name: play variables
+  hosts: all
+  vars:
+    url_play: play.example.com
+  tasks:
+    - name: Print Variable
+      debug:
+        msg: Play Var - {{ url_play }}
+        
