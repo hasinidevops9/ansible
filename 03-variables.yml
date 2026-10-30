@@ -1,0 +1,48 @@
+# inventory file variables
+
+- name: Variables from inventory file
+  hosts: all
+  tasks:
+    - name: Print Variables
+      ansible.builtin.debug:
+        msg: Host Var - {{ url_host }}  , Group Var - {{ url_group }}
+
+# playbook varibales - limited to play level
+
+- name: play variables 
+  hosts: all
+  vars:
+    url_play: play.example.com
+  vars_files:
+    - exvars.yml
+  tasks:
+    - name: Print Variable
+      debug:
+        msg: Play Var - {{ url_play }} , Play File Var - {{ url_file }}
+
+# Role Variables - limited to role level
+
+- name: Role Variables
+  hosts: all
+  roles: 
+    - demo
+
+# Task Variables - Limited to task level
+
+- name: Task avriable
+  hosts: all
+  tasks:
+    - name: Print Variables
+      ansible.builtin.debug:
+        msg: Task Var - {{ url_task }} 
+      vars:
+        url_task: task.example.com
+
+# CLI Variables - Give value in Command, Any play can access this variable
+
+- name: Variables from cli
+  hosts: all
+  tasks:
+    - name: Print Variables
+      ansible.builtin.debug:
+        msg: CLI var - {{ url_cli }}

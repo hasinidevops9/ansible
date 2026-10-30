@@ -1,0 +1,36 @@
+- name: Roles
+  hosts: localhost
+  connection: local
+  vars: 
+    url: google.com
+  tasks: 
+    - name: Template nginx
+      ansible.builtin.template:
+        src: nginx.conf
+        dest: /tmp/nginx.conf
+      vars:
+        app_names:
+          - orders
+          - ratings
+          - payment
+          - shipping
+          - cart
+          - user
+          - catalogue
+      notify: Restart Nginx
+
+    - name: Run handlers immediatly
+      ansible.builtin.meta: flush_handlers
+
+    - name: some task1
+      ansible.builtin.debug:
+        msg: some task1
+
+    - name: some task2
+      ansible.builtin.debug:
+        msg: some task2
+
+  handlers:
+    - name: Restart Nginx
+      ansible.builtin.debug:
+        msg: Restarting Nginx
