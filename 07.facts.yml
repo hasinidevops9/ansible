@@ -8,7 +8,7 @@
 - name: Print all facts1
   hosts: localhost
   connection: local
-  gather_facts: no
+  gather_facts: no          # This dont run ansible_facts
   tasks:
     - debug: 
         msg: "Hello"

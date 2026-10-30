@@ -1,0 +1,12 @@
+- name: Register Variables
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Run commans
+      anisble.builtin.shell: df -h
+      register: out       # This stores output of command
+
+
+    - name: Print out
+      ansible.builtin.debug:
+        msg: "{{ out }}"      # This calls and prints that variable contains output content
