@@ -2,7 +2,7 @@
   hosts: localhost
   connection: local
   tasks:
-    - name: Run commans
+    - name: Run command
       anisble.builtin.shell: df -h
       register: out       # This stores output of command
 
