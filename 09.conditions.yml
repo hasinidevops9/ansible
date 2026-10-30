@@ -12,3 +12,14 @@
       ansible.builtin.debug:
         msg: Install Nginx
       when: ansible_facts['os_family'] == "Debian"
+
+# String condition: Like searching a string with particular word
+     
+    - name: Print Distribution
+      debug:
+        msg: "{{ ansible_facts['distribution'] }}"
+
+    - name: Print
+      when: "'Hat' in ansible_facts['distribution']"
+      debug: 
+        msg: "RedHat"
