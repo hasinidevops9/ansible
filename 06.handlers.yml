@@ -19,6 +19,14 @@
           - catalogue
       notify: Restart Nginx
 
+    - name: some task1
+      ansible.builtin.debug:
+        msg: some task1
+
+    - name: some task2
+      ansible.builtin.debug:
+        msg: some task2
+        
   handlers:
     - name: Restart Nginx
       ansible.builtin.debug:
