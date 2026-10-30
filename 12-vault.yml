@@ -1,6 +1,8 @@
 - name: Ansible vault
   hosts: localhost
   connection: local
+   # Ansible Vault encrypts sensitive data like passwords so they are not stored in plain text.
+   # Use --ask-vault-password while running the playbook to enter the Vault password and decrypt the value.
   vars:
     password: !vault |
                         $ANSIBLE_VAULT;1.1;AES256
