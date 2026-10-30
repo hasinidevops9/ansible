@@ -3,6 +3,7 @@
   connection: local
   tasks:
     - name: Blue Task 1
+      tags: blue
       when: color == "blue"
       debug:
         msg: Blue Task 1
