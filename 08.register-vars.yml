@@ -3,7 +3,7 @@
   connection: local
   tasks:
     - name: Run command
-      anisble.builtin.shell: df -h
+      ansible.builtin.shell: df -h
       register: out       # This stores output of command
 
 
