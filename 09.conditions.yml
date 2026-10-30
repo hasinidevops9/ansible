@@ -1,0 +1,14 @@
+- name: conditions
+  hosts: localhost
+  connection: local
+  become: yes
+  tasks: 
+    - name: Install nginx only on RedHat
+      ansible.builtin.debug:
+        msg: Install Nginx
+      when: ansible_facts['os_family'] == "RedHat"
+    
+    - name: Install nginx only on Debian
+      ansible.builtin.debug:
+        msg: Install Nginx
+      when: ansible_facts['os_family'] == "Debian"
