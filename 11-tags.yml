@@ -1,3 +1,7 @@
+# Tags select tasks first; only tasks with the matching tag are considered for execution.
+# The 'when' condition is checked only after a task passes the tag filter.
+# Passing -e color=blue does not automatically assign the 'blue' tag to a task.
+
 - name: With conditions
   hosts: localhost
   connection: local
